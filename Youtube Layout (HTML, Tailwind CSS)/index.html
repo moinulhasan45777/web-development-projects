@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      ::-webkit-scrollbar {
+        width: 4px;
+        height: 2px;
+        background: transparent;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: transparent;
+        border-radius: 4px;
+      }
+
+      :hover::-webkit-scrollbar-thumb {
+        background: rgba(100, 100, 100, 0.5);
+      }
+    </style>
+    <title>YouTube</title>
+  </head>
+  <body class="overflow-auto">
+    <!-- Header -->
+    <header class="mb-3 fixed w-full z-10 bg-white top-0 left-0 z-12">
+      <nav
+        class="sticky flex justify-between items-center w-full py-2 px-6 gap-3"
+      >
+        <!-- Left Block -->
+        <div class="flex flex-none gap-6 items-center">
+          <ion-icon
+            name="menu-outline"
+            class="w-7 h-7 cursor-pointer"
+          ></ion-icon
+          ><img
+            src="youtube_logo.png"
+            alt="Youtube logo"
+            class="h-5 cursor-pointer"
+          />
+        </div>
+
+        <!-- Middle Block -->
+        <div
+          class="flex items-center h-10 flex-1 justify-end md:justify-center ml-20 gap-3 max-w-[700px]"
+        >
+          <!-- Search Bar with Icon Container -->
+          <div class="justify-center h-full items-center flex-1 hidden md:flex">
+            <input
+              type="text"
+              placeholder="Search"
+              class="h-full w-full px-3 rounded-l-full ring-0 focus:outline-none border-1 border-[#d3d3d3] pb-1 focus:border-[#5e79e5] focus:inset-shadow-sm"
+            />
+            <!-- Search Icon Container -->
+            <div
+              class="h-full flex items-center rounded-r-full border-1 border-[#d3d3d3] border-l-0 px-5 bg-[#fdfdfd] cursor-pointer"
+            >
+              <ion-icon
+                name="search-outline"
+                class="w-6 h-6 stroke-0 min-w-6 min-h-6"
+                style="--ionicon-stroke-width: 11px"
+              ></ion-icon>
+            </div>
+          </div>
+          <!-- Search Icon Container -->
+          <div
+            class="h-full rounded-full bg-[#fcfcfc] p-2 md:hidden cursor-pointer"
+          >
+            <ion-icon
+              name="search-outline"
+              class="w-6 h-6 min-w-6 min-h-6"
+            ></ion-icon>
+          </div>
+          <div
+            class="h-full rounded-full bg-[#fcfcfc] p-2 hover:bg-[#d3d3d3] cursor-pointer"
+          >
+            <ion-icon
+              name="mic-outline"
+              class="w-6 h-6 min-w-6 min-h-6"
+            ></ion-icon>
+          </div>
+        </div>
+        <!-- Right Block -->
+        <div class="flex gap-3 items-center flex-none">
+          <!-- 'Create new' container -->
+          <div
+            class="flex items-center gap-1 rounded-full px-3 bg-[#fcfcfc] py-1 hover:bg-[#d3d3d3] cursor-pointer"
+          >
+            <ion-icon
+              name="add-outline"
+              class="w-7 h-7 stroke-0"
+              style="--ionicon-stroke-width: 11px"
+            ></ion-icon>
+            <p class="block">Create</p>
+          </div>
+          <ion-icon
+            name="notifications-outline"
+            class="w-6 h-6 min-w-6 min-h-6 cursor-pointer"
+            style="--ionicon-stroke-width: 18px"
+          ></ion-icon>
+          <img
+            src="profile_pic.jpg"
+            alt="Channel Picture"
+            class="h-8 rounded-full ml-4 cursor-pointer"
+          />
+        </div>
+      </nav>
+    </header>
+    <!-- *********** -->
+    <!-- *********** -->
+    <!-- *********** -->
+    <!-- *********** -->
+    <!-- Main Content -->
+    <!-- *********** -->
+    <!-- *********** -->
+    <!-- *********** -->
+    <!-- *********** -->
+    <aside
+      class="fixed hidden xl:flex flex-col min-w-60 w-60 overflow-y-scroll mt-17 max-h-[calc(100vh-68px)] pl-4"
+    >
+      <!-- ESSENTIAL TAB -->
+      <section class="flex flex-col w-[92%]">
+        <!-- Home -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg bg-[#d3d3d3] hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <ion-icon name="home" class="w-6 h-6 min-w-6 min-h-6"></ion-icon>
+          <p class="text-sm">Home</p>
+        </div>
+        <!-- Shorts -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <ion-icon
+            name="ticket-outline"
+            class="w-6 h-6 min-w-6 min-h-6"
+          ></ion-icon>
+          <p class="text-sm">Shorts</p>
+        </div>
+        <!-- Subscriptions -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <ion-icon
+            name="bag-check-outline"
+            class="w-6 h-6 min-w-6 min-h-6"
+          ></ion-icon>
+          <p class="text-sm">Subscriptions</p>
+        </div>
+      </section>
+      <!-- Section Separator -->
+      <div class="w-full h-[1px] min-h-[1px] bg-[#d3d3d3] my-2"></div>
+      <!-- PERSONAL TAB -->
+      <section class="flex flex-col w-[92%]">
+        <!-- Section Intro -->
+        <div
+          class="flex items-center gap-2 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <p class="text-md font-medium">You</p>
+          <ion-icon
+            name="chevron-forward-outline"
+            class="w-4 h-4 min-w-4 min-h-4"
+          ></ion-icon>
+        </div>
+        <!-- History -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <ion-icon
+            name="receipt-outline"
+            class="w-6 h-6 min-w-6 min-h-6"
+          ></ion-icon>
+          <p class="text-sm">History</p>
+        </div>
+        <!-- Playlists -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <ion-icon
+            name="layers-outline"
+            class="w-6 h-6 min-w-6 min-h-6"
+          ></ion-icon>
+          <p class="text-sm">Playlists</p>
+        </div>
+        <!-- Your Videos -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <ion-icon
+            name="play-outline"
+            class="w-6 h-6 min-w-6 min-h-6"
+          ></ion-icon>
+          <p class="text-sm">Your videos</p>
+        </div>
+        <!-- Watch Later -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <ion-icon
+            name="time-outline"
+            class="w-6 h-6 min-w-6 min-h-6"
+          ></ion-icon>
+          <p class="text-sm">Watch later</p>
+        </div>
+        <!-- Liked Videos -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer scroll"
+        >
+          <ion-icon
+            name="thumbs-up-outline"
+            class="w-6 h-6 min-w-6 min-h-6"
+          ></ion-icon>
+          <p class="text-sm">Liked videos</p>
+        </div>
+      </section>
+      <!-- Section Separator -->
+      <div class="w-[98%] h-[1px] min-h-[1px] bg-[#d3d3d3] my-2"></div>
+      <!-- SUBSCRIPTIONS TAB -->
+      <section class="flex flex-col w-[92%]">
+        <!-- Section Intro -->
+        <div class="flex items-center gap-2 py-2 px-2 rounded-lg">
+          <p class="text-md font-medium">Subscriptions</p>
+        </div>
+        <!-- MasterChef World -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <img
+            src="Icons/Subscription Tab Icons/Masterchef World.jpg"
+            alt="Masterchef world icon"
+            class="w-6 h-6 min-w-6 min-h-6 rounded-full"
+          />
+          <!-- class="w-6 h-6 min-w-6 min-h-6" -->
+          <p class="text-sm">MasterChef World</p>
+        </div>
+        <!-- Juxtopposed -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <img
+            src="Icons/Subscription Tab Icons/juxtopposed.jpg"
+            alt="Masterchef world icon"
+            class="w-6 h-6 min-w-6 min-h-6 rounded-full"
+          />
+          <p class="text-sm">Juxtopposed</p>
+        </div>
+        <!-- The Web Architect -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <img
+            src="Icons/Subscription Tab Icons/thewebarchitect.jpg"
+            alt="Masterchef world icon"
+            class="w-6 h-6 min-w-6 min-h-6 rounded-full"
+          />
+          <p class="text-sm">The Web Architect</p>
+        </div>
+        <!-- ESL Counter Strike -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <img
+            src="Icons/Subscription Tab Icons/eslcounterstrike.jpg"
+            alt="Masterchef world icon"
+            class="w-6 h-6 min-w-6 min-h-6 rounded-full"
+          />
+          <p class="text-sm">ESL Counter Strike</p>
+        </div>
+        <!-- Zeteo -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <img
+            src="Icons/Subscription Tab Icons/zeteo.jpg"
+            alt="Masterchef world icon"
+            class="w-6 h-6 min-w-6 min-h-6 rounded-full"
+          />
+          <p class="text-sm">Zeteo</p>
+        </div>
+        <!-- Nadir OTG -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <img
+            src="Icons/Subscription Tab Icons/nadirotg.jpg"
+            alt="Masterchef world icon"
+            class="w-6 h-6 min-w-6 min-h-6 rounded-full"
+          />
+          <p class="text-sm">Nadir OTG</p>
+        </div>
+        <!-- Sony LIV -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <img
+            src="Icons/Subscription Tab Icons/sonyliv.jpg"
+            alt="Masterchef world icon"
+            class="w-6 h-6 min-w-6 min-h-6 rounded-full"
+          />
+          <p class="text-sm">Sony LIV</p>
+        </div>
+        <!-- Show More -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <ion-icon
+            name="chevron-down-outline"
+            class="w-5 h-5 min-w-5 min-h-5"
+          ></ion-icon>
+          <p class="text-sm">Show more</p>
+        </div>
+      </section>
+      <!-- Section Separator -->
+      <div class="w-full min-h-[1px] h-[1px] bg-[#d3d3d3] my-2"></div>
+      <!-- EXPLORE TAB -->
+      <section class="flex flex-col w-[92%]">
+        <!-- Section Intro -->
+        <div class="flex items-center gap-2 py-2 px-2 rounded-lg">
+          <p class="text-md font-medium">Explore</p>
+        </div>
+        <!-- Trending -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <ion-icon
+            name="flame-outline"
+            class="w-6 h-6 min-w-6 min-h-6"
+          ></ion-icon>
+          <p class="text-sm">Trending</p>
+        </div>
+        <!-- Music -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <ion-icon
+            name="musical-notes-outline"
+            class="w-6 h-6 min-w-6 min-h-6"
+          ></ion-icon>
+          <p class="text-sm">Music</p>
+        </div>
+        <!-- Gaming -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <ion-icon
+            name="game-controller-outline"
+            class="w-6 h-6 min-w-6 min-h-6"
+          ></ion-icon>
+          <p class="text-sm">Gaming</p>
+        </div>
+        <!-- Sports -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <ion-icon
+            name="trophy-outline"
+            class="w-6 h-6 min-w-6 min-h-6"
+          ></ion-icon>
+          <p class="text-sm">Sports</p>
+        </div>
+      </section>
+      <!-- Section Separator -->
+      <div class="w-full min-h-[1px] h-[1px] bg-[#d3d3d3] my-2"></div>
+      <!-- More from YouTube TAB -->
+      <section class="flex flex-col w-[92%]">
+        <!-- Section Intro -->
+        <div class="flex items-center gap-2 py-2 px-2 rounded-lg">
+          <p class="text-md font-medium">More from YouTube</p>
+        </div>
+        <!-- YouTube Premium -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <ion-icon
+            name="logo-youtube"
+            class="w-6 h-6 min-w-6 min-h-6 text-red-700"
+          ></ion-icon>
+          <p class="text-sm">YouTube Premium</p>
+        </div>
+        <!-- YouTube Studio -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <ion-icon
+            name="diamond"
+            class="w-6 h-6 min-w-6 min-h-6 text-red-700"
+          ></ion-icon>
+          <p class="text-sm">YouTube Studio</p>
+        </div>
+        <!-- YouTube Music -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <ion-icon
+            name="caret-forward-circle"
+            class="w-6 h-6 min-w-6 min-h-6 text-red-700"
+          ></ion-icon>
+          <p class="text-sm">YouTube Music</p>
+        </div>
+        <!-- YouTube Kids -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <ion-icon
+            name="happy-outline"
+            class="w-6 h-6 min-w-6 min-h-6 text-red-700"
+          ></ion-icon>
+          <p class="text-sm">YouTube Kids</p>
+        </div>
+      </section>
+      <!-- Section Separator -->
+      <div class="w-full min-h-[1px] h-[1px] bg-[#d3d3d3] my-2"></div>
+      <!-- SETTINGS TAB -->
+      <section class="flex flex-col w-[92%]">
+        <!-- Settings-->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <ion-icon
+            name="settings-outline"
+            class="w-6 h-6 min-w-6 min-h-6"
+          ></ion-icon>
+          <p class="text-sm">Settings</p>
+        </div>
+        <!-- Report history -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <ion-icon
+            name="flag-outline"
+            class="w-6 h-6 min-w-6 min-h-6"
+          ></ion-icon>
+          <p class="text-sm">Report history</p>
+        </div>
+        <!-- Help -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <ion-icon
+            name="help-circle-outline"
+            class="w-6 h-6 min-w-6 min-h-6"
+          ></ion-icon>
+          <p class="text-sm">Help</p>
+        </div>
+        <!-- Send feedback -->
+        <div
+          class="flex items-center gap-6 py-2 px-2 rounded-lg hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <ion-icon
+            name="information-circle-outline"
+            class="w-6 h-6 min-w-6 min-h-6"
+          ></ion-icon>
+          <p class="text-sm">Send feedback</p>
+        </div>
+      </section>
+      <!-- Section Separator -->
+      <div class="w-full min-h-[1px] h-[1px] bg-[#d3d3d3] my-2"></div>
+      <footer class="flex flex-col gap-1 mt-2">
+        <div class="flex items-center gap-2 px-2 rounded-lg">
+          <a href="#" class="text-xs font-medium text-[#767676]">About</a>
+          <a href="#" class="text-xs font-medium text-[#767676]">Press</a>
+          <a href="#" class="text-xs font-medium text-[#767676]">Copyright</a>
+        </div>
+        <div class="flex items-center gap-2 px-2 rounded-lg">
+          <a href="#" class="text-xs font-medium text-[#767676]">Contact us</a>
+          <a href="#" class="text-xs font-medium text-[#767676]">Creators</a>
+        </div>
+        <div class="flex items-center gap-2 px-2 rounded-lg mb-4">
+          <a href="#" class="text-xs font-medium text-[#767676]">Advertise</a>
+          <a href="#" class="text-xs font-medium text-[#767676]">Developers</a>
+        </div>
+        <div class="flex items-center gap-2 px-2 rounded-lg">
+          <a href="#" class="text-xs font-medium text-[#767676]">Terms</a>
+          <a href="#" class="text-xs font-medium text-[#767676]">Privacy</a>
+          <a href="#" class="text-xs font-medium text-[#767676]"
+            >Policy & Safety</a
+          >
+        </div>
+        <div class="flex items-center gap-2 px-2 rounded-lg">
+          <a href="#" class="text-xs font-medium text-[#767676]"
+            >How YouTube works</a
+          >
+        </div>
+        <div class="flex items-center gap-2 px-2 rounded-lg mb-4">
+          <a href="#" class="text-xs font-medium text-[#767676]"
+            >Test new features</a
+          >
+        </div>
+        <div class="flex items-center gap-2 px-2 rounded-lg mb-5">
+          <p class="text-xs font-thin text-gray-400">&copy; 2025 Google LLC</p>
+        </div>
+      </footer>
+    </aside>
+    <aside
+      class="fixed hidden sm:flex flex-col xl:hidden min-w-16 w-16 ml-1 mt-15"
+    >
+      <!-- Home -->
+      <div
+        class="flex flex-col items-center gap-1 cursor-pointer py-4 rounded-xl hover:bg-[#d3d3d3]"
+      >
+        <ion-icon name="home" class="w-6 h-6 min-w-6 min-h-6"></ion-icon>
+        <p class="text-[0.65rem]">Home</p>
+      </div>
+      <!-- Shorts -->
+      <div
+        class="flex flex-col items-center gap-1 cursor-pointer py-4 rounded-xl hover:bg-[#d3d3d3]"
+      >
+        <ion-icon
+          name="ticket-outline"
+          class="w-6 h-6 min-w-6 min-h-6"
+        ></ion-icon>
+        <p class="text-[0.65rem]">Shorts</p>
+      </div>
+      <!-- Subscription -->
+      <div
+        class="flex flex-col items-center gap-1 cursor-pointer py-4 rounded-xl hover:bg-[#d3d3d3]"
+      >
+        <ion-icon
+          name="bag-check-outline"
+          class="w-6 h-6 min-w-6 min-h-6"
+        ></ion-icon>
+        <p class="text-[0.65rem]">Subscriptions</p>
+      </div>
+      <!-- You -->
+      <div
+        class="flex flex-col items-center gap-1 cursor-pointer py-4 rounded-xl hover:bg-[#d3d3d3]"
+      >
+        <ion-icon
+          name="person-circle-outline"
+          class="w-6 h-6 min-w-6 min-h-6"
+        ></ion-icon>
+        <p class="text-[0.65rem]">You</p>
+      </div>
+    </aside>
+    <section
+      id="suggestion"
+      class="fixed w-[100vw] min-w-[100vw] sm:w-[calc(100vw-80px)] sm:min-w-[calc(100vw-80px)] xl:w-[calc(100vw-240px)] xl:min-w-[calc(100vw-240px)] pt-17 pl-4 sm:ml-[80px] xl:ml-[240px] z-10 bg-white"
+    >
+      <div class="flex gap-3 mb-3 whitespace-nowrap overflow-x-scroll">
+        <div
+          class="px-[0.7rem] py-[0.35rem] bg-black rounded-[10px] cursor-pointer"
+        >
+          <p class="text-white text-sm font-medium">All</p>
+        </div>
+        <div
+          class="px-[0.7rem] py-[0.35rem] bg-[#fcfcfc] rounded-[10px] hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <p class="text-sm font-medium">Gaming</p>
+        </div>
+        <div
+          class="px-[0.7rem] py-[0.35rem] bg-[#fcfcfc] rounded-[10px] hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <p class="text-sm font-medium">Dramedy</p>
+        </div>
+        <div
+          class="px-[0.7rem] py-[0.35rem] bg-[#fcfcfc] rounded-[10px] hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <p class="text-sm font-medium">Live</p>
+        </div>
+        <div
+          class="px-[0.7rem] py-[0.35rem] bg-[#fcfcfc] rounded-[10px] hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <p class="text-sm font-medium">Korean dramas</p>
+        </div>
+        <div
+          class="px-[0.7rem] py-[0.35rem] bg-[#fcfcfc] rounded-[10px] hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <p class="text-sm font-medium">Wickets</p>
+        </div>
+        <div
+          class="px-[0.7rem] py-[0.35rem] bg-[#fcfcfc] rounded-[10px] hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <p class="text-sm font-medium">Shark Tank</p>
+        </div>
+        <div
+          class="px-[0.7rem] py-[0.35rem] bg-[#fcfcfc] rounded-[10px] hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <p class="text-sm font-medium">Counter-Strike 2</p>
+        </div>
+        <div
+          class="px-[0.7rem] py-[0.35rem] bg-[#fcfcfc] rounded-[10px] hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <p class="text-sm font-medium">Podcasts</p>
+        </div>
+        <div
+          class="px-[0.7rem] py-[0.35rem] bg-[#fcfcfc] rounded-[10px] hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <p class="text-sm font-medium">Finals</p>
+        </div>
+        <div
+          class="px-[0.7rem] py-[0.35rem] bg-[#fcfcfc] rounded-[10px] hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <p class="text-sm font-medium">Samsung</p>
+        </div>
+        <div
+          class="px-[0.7rem] py-[0.35rem] bg-[#fcfcfc] rounded-[10px] hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <p class="text-sm font-medium">Android</p>
+        </div>
+        <div
+          class="px-[0.7rem] py-[0.35rem] bg-[#fcfcfc] rounded-[10px] hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <p class="text-sm font-medium">Tablet Computers</p>
+        </div>
+        <div
+          class="px-[0.7rem] py-[0.35rem] bg-[#fcfcfc] rounded-[10px] hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <p class="text-sm font-medium">Thrillers</p>
+        </div>
+        <div
+          class="px-[0.7rem] py-[0.35rem] bg-[#fcfcfc] rounded-[10px] hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <p class="text-sm font-medium">Superhero movies</p>
+        </div>
+        <div
+          class="px-[0.7rem] py-[0.35rem] bg-[#fcfcfc] rounded-[10px] hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <p class="text-sm font-medium">Algorithms</p>
+        </div>
+        <div
+          class="px-[0.7rem] py-[0.35rem] bg-[#fcfcfc] rounded-[10px] hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <p class="text-sm font-medium">Kitchens</p>
+        </div>
+        <div
+          class="px-[0.7rem] py-[0.35rem] bg-[#fcfcfc] rounded-[10px] hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <p class="text-sm font-medium">History</p>
+        </div>
+        <div
+          class="px-[0.7rem] py-[0.35rem] bg-[#fcfcfc] rounded-[10px] hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <p class="text-sm font-medium">Recently uploaded</p>
+        </div>
+        <div
+          class="px-[0.7rem] py-[0.35rem] bg-[#fcfcfc] rounded-[10px] hover:bg-[#d3d3d3] cursor-pointer"
+        >
+          <p class="text-sm font-medium">Watched</p>
+        </div>
+      </div>
+    </section>
+    <main
+      class="fixed w-[100vw] min-w-[100vw] sm:w-[calc(100vw-80px)] sm:min-w-[calc(100vw-80px)] xl:w-[calc(100vw-240px)] xl:min-w-[calc(100vw-240px)] sm:ml-[80px] xl:ml-[240px] pt-[134px] overflow-y-scroll pl-4 pr-[0.55rem]"
+    >
+      <div
+        class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-x-3 gap-y-7 h-[calc(100vh-134px)]"
+      >
+        <!-- **************** -->
+        <!-- Video Container 1-->
+        <!-- **************** -->
+        <a
+          href="https://www.youtube.com/watch?v=sZk4mg_KZH0&pp=ygUnbmVpZ2hib3VyIHJlc2N1ZXMgZ2lybCBmcm9tIGhlciBodXNiYW5k0gcJCb0Ag7Wk3p_U"
+        >
+          <div
+            class="cursor-pointer active:bg-[#d3d3d3] rounded-lg p-1 transition-all delay-100 h-full duration-300 ease-in-out"
+          >
+            <!-- Thumbnail Container -->
+            <div class="mb-2 relative">
+              <img
+                src="Thumbnails/thumbnail_1.png"
+                alt="Thumbnail"
+                class="rounded-xl width-full"
+              />
+              <div
+                class="absolute right-2 bottom-2 bg-[rgba(0,0,0,0.5)] py-[0.1rem] px-[0.4rem] rounded-md"
+              >
+                <p class="text-[0.7rem] text-white font-medium font-sans">
+                  13:05
+                </p>
+              </div>
+            </div>
+            <!-- Video Info Container -->
+            <div class="flex gap-4 pr-8">
+              <!-- Iconcontainer -->
+              <div>
+                <img
+                  src="Icons/icon_1.jpg"
+                  alt="Channel icon"
+                  class="w-10 h-10 min-w-10 min-h-10 rounded-full"
+                />
+              </div>
+              <div>
+                <p class="text-[0.95rem]/5 font-medium">
+                  Neighbor Rescues Girl from Her Husband | @DramatizeMe.Special
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1] mt-[0.1rem]">
+                  DramatizeMe Special
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1]">
+                  21K views &middot; 14 hours ago
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- **************** -->
+        <!-- Video Container 2-->
+        <!-- **************** -->
+        <a href="https://www.youtube.com/watch?v=xxvYrKpI1-0">
+          <div
+            class="cursor-pointer active:bg-[#d3d3d3] rounded-lg p-1 transition-all delay-100 h-full duration-300 ease-in-out"
+          >
+            <!-- Thumbnail Container -->
+            <div class="mb-2 relative">
+              <img
+                src="Thumbnails/thumbnail_2.png"
+                alt="Thumbnail"
+                class="rounded-xl"
+              />
+              <div
+                class="absolute right-2 bottom-2 bg-[rgba(0,0,0,0.5)] py-[0.1rem] px-[0.4rem] rounded-md"
+              >
+                <p class="text-[0.7rem] text-white font-medium font-sans">
+                  15:08
+                </p>
+              </div>
+            </div>
+
+            <!-- Video Info Container -->
+            <div class="flex gap-4 pr-8">
+              <!-- Iconcontainer -->
+              <div>
+                <img
+                  src="Icons/icon_2.jpg"
+                  alt="Channel icon"
+                  class="w-10 h-10 min-w-10 min-h-10 rounded-full"
+                />
+              </div>
+              <div>
+                <p class="text-[0.95rem]/5 font-medium">
+                  Extra Cover | India v Australia | CWC23 Final
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1] mt-[0.1rem]">ICC</p>
+                <p class="text-[0.8rem] text-[#a1a1a1]">
+                  1.5M views &middot; 1 year ago
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- **************** -->
+        <!-- Video Container 3-->
+        <!-- **************** -->
+        <a href="https://www.youtube.com/watch?v=bAQT56aD-YE&t=157s">
+          <div
+            class="cursor-pointer active:bg-[#d3d3d3] rounded-lg p-1 transition-all delay-100 h-full duration-300 ease-in-out"
+          >
+            <!-- Thumbnail Container -->
+            <div class="mb-2 relative">
+              <img
+                src="Thumbnails/thumbnail_3.png"
+                alt="Thumbnail"
+                class="rounded-xl"
+              />
+              <div
+                class="absolute right-2 bottom-2 bg-[rgba(0,0,0,0.5)] py-[0.1rem] px-[0.4rem] rounded-md"
+              >
+                <p class="text-[0.7rem] text-white font-medium font-sans">
+                  11:39
+                </p>
+              </div>
+            </div>
+            <!-- Video Info Container -->
+            <div class="flex gap-4 pr-8">
+              <!-- Iconcontainer -->
+              <div>
+                <img
+                  src="Icons/icon_3.jpg"
+                  alt="Channel icon"
+                  class="w-10 h-10 min-w-10 min-h-10 rounded-full"
+                />
+              </div>
+              <div>
+                <p class="text-[0.95rem]/5 font-medium">
+                  Boss Takes Advantage of Indian Migrant, Then Gets Punished |
+                  @DramatizeMe
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1] mt-[0.1rem]">
+                  DramatizeMe
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1]">
+                  1.8M views &middot; 3 years ago
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- **************** -->
+        <!-- Video Container 4-->
+        <!-- **************** -->
+        <a href="https://www.youtube.com/watch?v=2VeSms3LvdE&t=16s">
+          <div
+            class="cursor-pointer active:bg-[#d3d3d3] rounded-lg p-1 transition-all delay-100 h-full duration-300 ease-in-out"
+          >
+            <!-- Thumbnail Container -->
+            <div class="mb-2 relative">
+              <img
+                src="Thumbnails/thumbnail_4.png"
+                alt="Thumbnail"
+                class="rounded-xl"
+              />
+              <div
+                class="absolute right-2 bottom-2 bg-[rgba(0,0,0,0.5)] py-[0.1rem] px-[0.4rem] rounded-md"
+              >
+                <p class="text-[0.7rem] text-white font-medium font-sans">
+                  18:26
+                </p>
+              </div>
+            </div>
+            <!-- Video Info Container -->
+            <div class="flex gap-4 pr-8">
+              <!-- Iconcontainer -->
+              <div>
+                <img
+                  src="Icons/icon_4.jpg"
+                  alt="Channel icon"
+                  class="w-10 h-10 min-w-10 min-h-10 rounded-full"
+                />
+              </div>
+              <div>
+                <p class="text-[0.95rem]/5 font-medium">
+                  iPhone 15 Pro Max vs Samsung Galaxy S23 Ultra-Which is the
+                  Flagship King?
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1] mt-[0.1rem]">SuperSaf</p>
+                <p class="text-[0.8rem] text-[#a1a1a1]">
+                  1.1M views &middot; 1 year ago
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- **************** -->
+        <!-- Video Container 5-->
+        <!-- **************** -->
+        <a href="https://www.youtube.com/watch?v=kwYnu1l1c4U&t=449s">
+          <div
+            class="cursor-pointer active:bg-[#d3d3d3] rounded-lg p-1 transition-all delay-100 h-full duration-300 ease-in-out"
+          >
+            <!-- Thumbnail Container -->
+            <div class="mb-2 relative">
+              <img
+                src="Thumbnails/thumbnail_5.png"
+                alt="Thumbnail"
+                class="rounded-xl"
+              />
+              <div
+                class="absolute right-2 bottom-2 bg-[rgba(0,0,0,0.5)] py-[0.1rem] px-[0.4rem] rounded-md"
+              >
+                <p class="text-[0.7rem] text-white font-medium font-sans">
+                  9:45
+                </p>
+              </div>
+            </div>
+            <!-- Video Info Container -->
+            <div class="flex gap-4 pr-8">
+              <!-- Iconcontainer -->
+              <div>
+                <img
+                  src="Icons/icon_5.jpg"
+                  alt="Channel icon"
+                  class="w-10 h-10 min-w-10 min-h-10 rounded-full"
+                />
+              </div>
+              <div>
+                <p class="text-[0.95rem]/5 font-medium">
+                  Google Pixel 9 Pro OR iPhone 16 PRO for EPIC CAMERA Experience
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1] mt-[0.1rem]">Tech4All</p>
+                <p class="text-[0.8rem] text-[#a1a1a1]">
+                  661 views &middot; 22 hours ago
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- **************** -->
+        <!-- Video Container 6-->
+        <!-- **************** -->
+        <a href="https://www.youtube.com/watch?v=anRuNCSPH-A">
+          <div
+            class="cursor-pointer active:bg-[#d3d3d3] rounded-lg p-1 transition-all delay-100 h-full duration-300 ease-in-out"
+          >
+            <!-- Thumbnail Container -->
+            <div class="mb-2 relative">
+              <img
+                src="Thumbnails/thumbnail_6.png"
+                alt="Thumbnail"
+                class="rounded-xl"
+              />
+              <div
+                class="absolute right-2 bottom-2 bg-[rgba(0,0,0,0.5)] py-[0.1rem] px-[0.4rem] rounded-md"
+              >
+                <p class="text-[0.7rem] text-white font-medium font-sans">
+                  21:38
+                </p>
+              </div>
+            </div>
+            <!-- Video Info Container -->
+            <div class="flex gap-4 pr-8">
+              <!-- Iconcontainer -->
+              <div>
+                <img
+                  src="Icons/icon_6.jpg"
+                  alt="Channel icon"
+                  class="w-10 h-10 min-w-10 min-h-10 rounded-full"
+                />
+              </div>
+              <div>
+                <p class="text-[0.95rem]/5 font-medium">
+                  Shark Anupam Asked 'Raheja Solar Food Processing' for Support?
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1] mt-[0.1rem]">Sony LIV</p>
+                <p class="text-[0.8rem] text-[#a1a1a1]">
+                  16K views &middot; 2 hours ago
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- **************** -->
+        <!-- Video Container 7-->
+        <!-- **************** -->
+        <a href="https://www.youtube.com/watch?v=7ZEpPVOnIRM">
+          <div
+            class="cursor-pointer active:bg-[#d3d3d3] rounded-lg p-1 transition-all delay-100 h-full duration-300 ease-in-out"
+          >
+            <!-- Thumbnail Container -->
+            <div class="mb-2 relative">
+              <img
+                src="Thumbnails/thumbnail_7.png"
+                alt="Thumbnail"
+                class="rounded-xl"
+              />
+              <div
+                class="absolute right-2 bottom-2 bg-[rgba(0,0,0,0.5)] py-[0.1rem] px-[0.4rem] rounded-md"
+              >
+                <p class="text-[0.7rem] text-white font-medium font-sans">
+                  45:01
+                </p>
+              </div>
+            </div>
+            <!-- Video Info Container -->
+            <div class="flex gap-4 pr-8">
+              <!-- Iconcontainer -->
+              <div>
+                <img
+                  src="Icons/icon_7.jpg"
+                  alt="Channel icon"
+                  class="w-10 h-10 min-w-10 min-h-10 rounded-full"
+                />
+              </div>
+              <div>
+                <p class="text-[0.95rem]/5 font-medium">
+                  Israel-Hamas: Norman Finkelstein vs Alan Dershowltz Round 2
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1] mt-[0.1rem]">
+                  Piers Morgan Uncensored
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1]">
+                  1.1M views &middot; 11 months ago
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- **************** -->
+        <!-- Video Container 8-->
+        <!-- **************** -->
+        <a href="https://www.youtube.com/watch?v=Hw1h9arHIgM">
+          <div
+            class="cursor-pointer active:bg-[#d3d3d3] rounded-lg p-1 transition-all delay-100 h-full duration-300 ease-in-out"
+          >
+            <!-- Thumbnail Container -->
+            <div class="mb-2 relative">
+              <img
+                src="Thumbnails/thumbnail_8.png"
+                alt="Thumbnail"
+                class="rounded-xl"
+              />
+              <div
+                class="absolute right-2 bottom-2 bg-[rgba(0,0,0,0.5)] py-[0.1rem] px-[0.4rem] rounded-md"
+              >
+                <p class="text-[0.7rem] text-white font-medium font-sans">
+                  0:51
+                </p>
+              </div>
+            </div>
+            <!-- Video Info Container -->
+            <div class="flex gap-4 pr-8">
+              <!-- Iconcontainer -->
+              <div>
+                <img
+                  src="Icons/icon_8.jpg"
+                  alt="Channel icon"
+                  class="w-10 h-10 min-w-10 min-h-10 rounded-full"
+                />
+              </div>
+              <div>
+                <p class="text-[0.95rem]/5 font-medium">
+                  Glenn Maxwell hits the 'Flying Fox' camera | Gillette T20
+                  Series 2018-19
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1] mt-[0.1rem]">
+                  cricket.com.au
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1]">
+                  22M views &middot; 6 years ago
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- **************** -->
+        <!-- Video Container 9-->
+        <!-- **************** -->
+        <a href="https://www.youtube.com/watch?v=3Y6-11P8S1o">
+          <div
+            class="cursor-pointer active:bg-[#d3d3d3] rounded-lg p-1 transition-all delay-100 h-full duration-300 ease-in-out"
+          >
+            <!-- Thumbnail Container -->
+            <div class="mb-2 relative">
+              <img
+                src="Thumbnails/thumbnail_9.png"
+                alt="Thumbnail"
+                class="rounded-xl"
+              />
+              <div
+                class="absolute right-2 bottom-2 bg-[rgba(0,0,0,0.5)] py-[0.1rem] px-[0.4rem] rounded-md"
+              >
+                <p class="text-[0.7rem] text-white font-medium font-sans">
+                  1:22
+                </p>
+              </div>
+            </div>
+            <!-- Video Info Container -->
+            <div class="flex gap-4 pr-8">
+              <!-- Iconcontainer -->
+              <div>
+                <img
+                  src="Icons/icon_9.jpg"
+                  alt="Channel icon"
+                  class="w-10 h-10 min-w-10 min-h-10 rounded-full"
+                />
+              </div>
+              <div>
+                <p class="text-[0.95rem]/5 font-medium">
+                  Green Book Movie Clip - Write a Letter to His Wife (2018) |
+                  Movieclips Coming Soon
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1] mt-[0.1rem]">
+                  Rotten Tomatoes Coming Soon
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1]">
+                  1.5M views &middot; 6 years ago
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- **************** -->
+        <!-- Video Container 10-->
+        <!-- **************** -->
+        <a href="https://www.youtube.com/watch?v=8hvbcAvkuJs">
+          <div
+            class="cursor-pointer active:bg-[#d3d3d3] rounded-lg p-1 transition-all delay-100 h-full duration-300 ease-in-out"
+          >
+            <!-- Thumbnail Container -->
+            <div class="mb-2 relative">
+              <img
+                src="Thumbnails/thumbnail_10.png"
+                alt="Thumbnail"
+                class="rounded-xl"
+              />
+              <div
+                class="absolute right-2 bottom-2 bg-[rgba(0,0,0,0.5)] py-[0.1rem] px-[0.4rem] rounded-md"
+              >
+                <p class="text-[0.7rem] text-white font-medium font-sans">
+                  50:21
+                </p>
+              </div>
+            </div>
+            <!-- Video Info Container -->
+            <div class="flex gap-4 pr-8">
+              <!-- Iconcontainer -->
+              <div>
+                <img
+                  src="Icons/icon_10.jpg"
+                  alt="Channel icon"
+                  class="w-10 h-10 min-w-10 min-h-10 rounded-full"
+                />
+              </div>
+              <div>
+                <p class="text-[0.95rem]/5 font-medium">
+                  Camping on Frozen Ocean - 6 Days Fishing for King Crab &
+                  Hunting Ptarmigan
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1] mt-[0.1rem]">
+                  Outdoor Boys
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1]">
+                  2.7M views &middot; 1 day ago
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- **************** -->
+        <!-- Video Container 11-->
+        <!-- **************** -->
+        <a href="https://www.youtube.com/watch?v=rNxAXiEWFLg&t=103s">
+          <div
+            class="cursor-pointer active:bg-[#d3d3d3] rounded-lg p-1 transition-all delay-100 h-full duration-300 ease-in-out"
+          >
+            <!-- Thumbnail Container -->
+            <div class="mb-2 relative">
+              <img
+                src="Thumbnails/thumbnail_11.png"
+                alt="Thumbnail"
+                class="rounded-xl"
+              />
+              <div
+                class="absolute right-2 bottom-2 bg-[rgba(0,0,0,0.5)] py-[0.1rem] px-[0.4rem] rounded-md"
+              >
+                <p class="text-[0.7rem] text-white font-medium font-sans">
+                  10:58
+                </p>
+              </div>
+            </div>
+            <!-- Video Info Container -->
+            <div class="flex gap-4 pr-8">
+              <!-- Iconcontainer -->
+              <div>
+                <img
+                  src="Icons/icon_11.jpg"
+                  alt="Channel icon"
+                  class="w-10 h-10 min-w-10 min-h-10 rounded-full"
+                />
+              </div>
+              <div>
+                <p class="text-[0.95rem]/5 font-medium">
+                  FaZe CS Ranks OTHER Pro Players (Best Tier List)
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1] mt-[0.1rem]">
+                  FaZe Esports
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1]">
+                  774K views &middot; 9 months ago
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- **************** -->
+        <!-- Video Container 12-->
+        <!-- **************** -->
+        <a href="https://www.youtube.com/watch?v=LXNeIGBQHn8">
+          <div
+            class="cursor-pointer active:bg-[#d3d3d3] rounded-lg p-1 transition-all delay-100 h-full duration-300 ease-in-out"
+          >
+            <!-- Thumbnail Container -->
+            <div class="mb-2 relative">
+              <img
+                src="Thumbnails/thumbnail_12.png"
+                alt="Thumbnail"
+                class="rounded-xl"
+              />
+              <div
+                class="absolute right-2 bottom-2 bg-[rgba(0,0,0,0.5)] py-[0.1rem] px-[0.4rem] rounded-md"
+              >
+                <p class="text-[0.7rem] text-white font-medium font-sans">
+                  15:23
+                </p>
+              </div>
+            </div>
+            <!-- Video Info Container -->
+            <div class="flex gap-4 pr-8">
+              <!-- Iconcontainer -->
+              <div>
+                <img
+                  src="Icons/icon_12.jpg"
+                  alt="Channel icon"
+                  class="w-10 h-10 min-w-10 min-h-10 rounded-full"
+                />
+              </div>
+              <div>
+                <p class="text-[0.95rem]/5 font-medium">
+                  || Australia vas Srilanka || CWC 2015 Full match highlights ||
+                  The big match
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1] mt-[0.1rem]">
+                  Doctorsports
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1]">
+                  409 views &middot; 1 day ago
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- **************** -->
+        <!-- Video Container 13-->
+        <!-- **************** -->
+        <a href="https://www.youtube.com/watch?v=neIYdLysqlk">
+          <div
+            class="cursor-pointer active:bg-[#d3d3d3] rounded-lg p-1 transition-all delay-100 h-full duration-300 ease-in-out"
+          >
+            <!-- Thumbnail Container -->
+            <div class="mb-2 relative">
+              <img
+                src="Thumbnails/thumbnail_13.png"
+                alt="Thumbnail"
+                class="rounded-xl"
+              />
+              <div
+                class="absolute right-2 bottom-2 bg-[rgba(0,0,0,0.5)] py-[0.1rem] px-[0.4rem] rounded-md"
+              >
+                <p class="text-[0.7rem] text-white font-medium font-sans">
+                  27:53
+                </p>
+              </div>
+            </div>
+            <!-- Video Info Container -->
+            <div class="flex gap-4 pr-8">
+              <!-- Iconcontainer -->
+              <div>
+                <img
+                  src="Icons/icon_13.jpg"
+                  alt="Channel icon"
+                  class="w-10 h-10 min-w-10 min-h-10 rounded-full"
+                />
+              </div>
+              <div>
+                <p class="text-[0.95rem]/5 font-medium">
+                  I tested the Craziest Xiaomi Gadgets!
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1] mt-[0.1rem]">
+                  Mrwhosetheboss
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1]">
+                  10M views &middot; 4 months ago
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- **************** -->
+        <!-- Video Container 14-->
+        <!-- **************** -->
+        <a href="https://www.youtube.com/watch?v=Iy-6jmQCcrI">
+          <div
+            class="cursor-pointer active:bg-[#d3d3d3] rounded-lg p-1 transition-all delay-100 h-full duration-300 ease-in-out"
+          >
+            <!-- Thumbnail Container -->
+            <div class="mb-2 relative">
+              <img
+                src="Thumbnails/thumbnail_14.png"
+                alt="Thumbnail"
+                class="rounded-xl"
+              />
+              <div
+                class="absolute right-2 bottom-2 bg-[rgba(0,0,0,0.5)] py-[0.1rem] px-[0.4rem] rounded-md"
+              >
+                <p class="text-[0.7rem] text-white font-medium font-sans">
+                  2:24:46
+                </p>
+              </div>
+            </div>
+            <!-- Video Info Container -->
+            <div class="flex gap-4 pr-8">
+              <!-- Iconcontainer -->
+              <div>
+                <img
+                  src="Icons/icon_14.jpg"
+                  alt="Channel icon"
+                  class="w-10 h-10 min-w-10 min-h-10 rounded-full"
+                />
+              </div>
+              <div>
+                <p class="text-[0.95rem]/5 font-medium">
+                  Raabta (Full Movie): Sushant Singh Rajput | Kriti Sanon |
+                  Rajkummar Rao
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1] mt-[0.1rem]">T-Series</p>
+                <p class="text-[0.8rem] text-[#a1a1a1]">
+                  21M views &middot; 5 months ago
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- **************** -->
+        <!-- Video Container 15-->
+        <!-- **************** -->
+        <a href="https://www.youtube.com/watch?v=eJi72KMWOC0">
+          <div
+            class="cursor-pointer active:bg-[#d3d3d3] rounded-lg p-1 transition-all delay-100 h-full duration-300 ease-in-out"
+          >
+            <!-- Thumbnail Container -->
+            <div class="mb-2 relative">
+              <img
+                src="Thumbnails/thumbnail_15.png"
+                alt="Thumbnail"
+                class="rounded-xl"
+              />
+              <div
+                class="absolute right-2 bottom-2 bg-[rgba(0,0,0,0.5)] py-[0.1rem] px-[0.4rem] rounded-md"
+              >
+                <p class="text-[0.7rem] text-white font-medium font-sans">
+                  7:37
+                </p>
+              </div>
+            </div>
+            <!-- Video Info Container -->
+            <div class="flex gap-4 pr-8">
+              <!-- Iconcontainer -->
+              <div>
+                <img
+                  src="Icons/icon_15.jpg"
+                  alt="Channel icon"
+                  class="w-10 h-10 min-w-10 min-h-10 rounded-full"
+                />
+              </div>
+              <div>
+                <p class="text-[0.95rem]/5 font-medium">
+                  Sensational Shami Hits Unbeaten Half-Century at Lord's |
+                  England v India 2021
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1] mt-[0.1rem]">
+                  Lord's Cricket Ground
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1]">
+                  6.5M views &middot; 1 year ago
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <!-- **************** -->
+        <!-- Video Container 16-->
+        <!-- **************** -->
+        <a href="https://www.youtube.com/watch?v=EMgEMxDXARk">
+          <div>
+            <!-- Thumbnail Container -->
+            <div class="mb-2 relative">
+              <img
+                src="Thumbnails/thumbnail_16.png"
+                alt="Thumbnail"
+                class="rounded-xl"
+              />
+              <div
+                class="absolute right-2 bottom-2 bg-[rgba(0,0,0,0.5)] py-[0.1rem] px-[0.4rem] rounded-md"
+              >
+                <p class="text-[0.7rem] text-white font-medium font-sans">
+                  9:42
+                </p>
+              </div>
+            </div>
+            <!-- Video Info Container -->
+            <div class="flex gap-4 pr-8">
+              <!-- Iconcontainer -->
+              <div>
+                <img
+                  src="Icons/icon_16.jpg"
+                  alt="Channel icon"
+                  class="w-10 h-10 min-w-10 min-h-10 rounded-full"
+                />
+              </div>
+              <div>
+                <p class="text-[0.95rem]/5 font-medium">
+                  Bangladesh's revolutiuon: Exiled blogger Pinaki Bhattacharya
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1] mt-[0.1rem]">
+                  FRANCE 24 ENGLISH
+                </p>
+                <p class="text-[0.8rem] text-[#a1a1a1]">
+                  1.1M views &middot; 1 month ago
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </main>
+  </body>
+</html>
