@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" class="leading-none">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Guess My Number!</title>
+  </head>
+  <body class="text-[#eee] bg-[#222]">
+    <header class="relative h-[35vh] border-b-[7px] border-solid border-[#eee]">
+      <h1
+        class="text-[4rem] text-center absolute w-full top-[52%] left-[50%] transform translate-x-[-50%] translate-y-[-50%] font-bold"
+      >
+        Guess My Number!
+      </h1>
+      <p class="text-[1.4rem] absolute top-[2rem] right-[2rem]">
+        (Between 1 and 20)
+      </p>
+      <button id="again" class="btn absolute top-[2rem] left-[2rem]">
+        Again!
+      </button>
+      <div
+        id="number"
+        class="!py-[3rem] px-0 bg-[#eee] text-[#333] text-[6rem] w-[15rem] text-center absolute bottom-0 left-[50%] transform translate-x-[-50%] translate-y-[50%]"
+      >
+        ?
+      </div>
+    </header>
+    <main class="h-[65vh] text-[#eee] flex items-center justify-around">
+      <section class="w-[52rem] flex flex-col items-center">
+        <input
+          id="guess"
+          type="number"
+          class="guess border-[4px] border-solid border-[#eee] text-inherit text-[5rem] p-[2.5rem] w-[25rem] text-center block !mb-[3rem]"
+        />
+        <button id="check" class="btn">Check!</button>
+      </section>
+      <section class="w-[52rem] text-[2rem]">
+        <p id="message" class="mb-[8rem] h-[3rem]">Start guessing...</p>
+        <p class="mb-[2rem]">💯 Score: <span id="score">20</span></p>
+        <p>🥇 Highscore: <span id="highscore">0</span></p>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

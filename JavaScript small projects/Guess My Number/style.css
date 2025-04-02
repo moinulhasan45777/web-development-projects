@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Press Start 2P', sans-serif;
+}
+
+/* ELEMENTS STYLE */
+
+.between {
+  font-size: 1.4rem;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.guess {
+  background: none;
+  font-family: inherit;
+}
+
+.btn {
+  border: none;
+  background-color: #eee;
+  color: #222;
+  font-size: 2rem;
+  font-family: inherit;
+  padding: 2rem 3rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ccc;
+}
