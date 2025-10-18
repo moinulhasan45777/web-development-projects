@@ -1,0 +1,14 @@
+<svg
+        width="375"
+        height="526"
+        viewBox="0 0 375 526"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style="width: 100%; height: auto"
+      >
+        <path
+          d="M0 0H375V506C375 506 293.5 461 187.5 506C81.5 551 0 506 0 506V0Z"
+          class="duration-500"
+          fill="#b80404"
+        ></path>
+      </svg>
