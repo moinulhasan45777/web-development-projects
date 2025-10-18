@@ -27,10 +27,10 @@ header {
 
 #background-img {
   position: absolute;
-  top: -2300px;
+  top: -143.75rem;
   left: 0;
   width: 100%;
-  height: 2000px;
+  height: 125rem;
   object-fit: cover;
   z-index: -1;
 }
@@ -38,15 +38,15 @@ header {
 #menu-container {
   justify-content: center;
   display: grid;
-  grid-template-columns: 350px 350px;
-  gap: 50px;
-  padding: 0 10px 0 10px;
+  grid-template-columns: 21.875rem 21.875rem;
+  gap: 3.125rem;
+  padding: 0 0.625rem 0 0.625rem;
   margin-bottom: 1rem;
 }
 
 .menu {
-  padding: 10px;
-  border-radius: 4px;
+  padding: 0.625rem;
+  border-radius: 0.25rem;
   background-color: white;
   text-align: center;
   background-color: white;
@@ -57,6 +57,7 @@ header {
   object-fit: fill;
   width: 100%;
   margin-bottom: 0.625rem;
+  border-radius: 0.25rem;
 }
 
 button {
@@ -71,7 +72,7 @@ button {
   font-weight: 300;
   width: 100%;
   padding: 1rem 0 1rem 0;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   gap: 1.8rem;
   transition: all 0.3s ease-in-out;
 }
@@ -81,7 +82,7 @@ button:hover {
   background-color: #6b0404;
 }
 .icon {
-  width: 20px;
+  width: 1.25rem;
 }
 
 h2 {
@@ -103,14 +104,14 @@ h1 {
 
 #facebook-container {
   margin: 0 auto;
-  width: 300px;
-  padding: 4px;
+  width: 18.75rem;
+  padding: 0.25rem;
   background-color: white;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 1px;
+  padding-bottom: 0.06rem;
   transition: all 0.3s ease-in-out;
 }
 
@@ -122,7 +123,7 @@ h1 {
 #icon-container {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.625px;
 }
 
 #icon-container p {
@@ -130,16 +131,16 @@ h1 {
 }
 
 #web-icon {
-  height: 38px;
-  width: 38px;
+  height: 2.375rem;
+  width: 2.375rem;
   background-color: #f9f9f9;
-  padding: 10px;
+  padding: 0.625rem;
 }
 
 #arrow {
   margin-right: 0.5rem;
-  height: 15px;
-  width: 15px;
+  height: 0.9375rem;
+  width: 0.9375rem;
 }
 
 #loader {
@@ -153,20 +154,37 @@ h1 {
   width: 30vw;
   object-fit: cover;
   opacity: 0;
-  transform: translateY(250px);
+  transform: translateY(15.625rem);
   animation: loaderIn 2s ease forwards;
 }
 
-/* Apply styles only if the screen width is 768px or less */
+@media (max-width: 1440px) {
+  #background-img {
+    top: -100rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  #background-img {
+    top: -70rem;
+  }
+}
+
+@media (max-width: 912px) {
+  #background-img {
+    top: -50rem;
+  }
+}
+
 @media (max-width: 768px) {
   #menu-container {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 1.875rem;
     padding: 0 3rem 0 3rem;
   }
 
   #background-img {
-    top: -215px;
+    top: -13.4375rem;
   }
 
   #facebook-container {
